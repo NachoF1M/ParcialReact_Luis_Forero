@@ -1,17 +1,106 @@
 /* aca van tus estilos valor (2 puntos)*/
 
 :root {
-    --character-list-color: #272B33; /* color de la lista de personajes */
-    --character-color: #3B3E43; /* color del card del personaje */
-    --primary-font-color: #F5F5F5; /* color fuente principal */
-    --secondary-font-color: #67686B; /* color fuente secundaria */
-    --alive: #54CB44; /* color personaje vivo */
-    --unknown: #9E9E9E; /* color personaje desconocido */
-    --dead: #D63D2E; /* color personaje 💀 */
-    --font: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; /* fuente principal */
+    --character-list-color: #272B33;
+    /* color de la lista de personajes */
+    --character-color: #3B3E43;
+    /* color del card del personaje */
+    --primary-font-color: #F5F5F5;
+    /* color fuente principal */
+    --secondary-font-color: #67686B;
+    /* color fuente secundaria */
+    --alive: #54CB44;
+    /* color personaje vivo */
+    --unknown: #9E9E9E;
+    /* color personaje desconocido */
+    --dead: #D63D2E;
+    /* color personaje 💀 */
+    --font: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    /* fuente principal */
 }
 
-.character-list {
-    /* ejemplo de uso de variables con css */
-    background-color: var(--character-list-color);
+/* Agrega estilos básicos para la vista de los personajes */
+/* Agrega estilos básicos para la vista de los personajes */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    justify-items: center;
+    font-family: var(--font);
+    margin-top: 90px !important;
+    margin: 0 auto;
+
+}
+
+.spaced-paragraph {
+    margin-bottom: 35px;
+}
+
+.character {
+    overflow: hidden;
+    width: 490px;
+    color: var(--primary-font-color);
+    height: 210px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    background-color: var(--character-color);
+    line-height: 2px;
+    border-radius: 10px;
+}
+
+.character img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.status-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-circle.green {
+    background-color: var(--alive);
+}
+
+.status-circle.red {
+    background-color: var(--dead);
+}
+
+.status-circle.grey {
+    background-color: var(--unknown);
+}
+
+body {
+    background-color: #272B33;
+}
+
+.character-title {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.spaced-paragraph2 {
+    color: var(--secondary-font-color);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1080px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
 }
